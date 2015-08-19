@@ -31,18 +31,16 @@ class Logger extends AbstractLogger
     
     public function __construct(
         EngineInterface $interpolator,
-        FormatterInterface $formatter,
-        OutputInterface $output)
+        HandlerBagInterface $handlerBag)
     {
         $this->interpolator = $interpolator;
-        $this->formatter = $formatter;
-        $this->output = $output;
+        $this->handlerBag = $handlerBag;
     }
     
     /**
      * The generic log method. First verifies the log level's validity and then
-     * interpolates and formats the message and outputs it (on the screen, in
-     * a file, depending on the output implementation provided etc)
+     * interpolates and formats the message and processes it (passes it to all
+     * of the registered handlers for the logger)
      * 
      * @param string $level the log level
      * @param string $message the message
@@ -59,10 +57,8 @@ class Logger extends AbstractLogger
         // interpolate the message
         $message = $this->interpolator->interpolate($message, $context);
         
-        // format and add DateTimes etc
-        $message = $this->formatter->format($level, $message);
-        
-        // output to the appropriate place
-        $this->output->output($message);
+        foreach ($this->handlerBag->handlers() as $handler) {
+            $handler->handle($level, $message);
+        }
     }
 }

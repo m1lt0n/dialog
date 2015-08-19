@@ -120,6 +120,6 @@ trait LoggerTrait
      */
     protected function isLevelAllowed($level)
     {
-        return in_array($level, LogLevel::all());
+        return LogLevel::isValid($level);
     }
 }
