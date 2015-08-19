@@ -52,7 +52,9 @@ class Logger extends AbstractLogger
     public function log($level, $message, array $context = [])
     {
         // Check if level is allowed, or throw an InvalidArgumentException
-        $this->isLevelAllowed($level);
+        if (!$this->isLevelAllowed($level)) {
+            throw new InvalidArgumentException('Invalid log level provided');
+        }
     
         // interpolate the message
         $message = $this->interpolator->interpolate($message, $context);
