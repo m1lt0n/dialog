@@ -15,6 +15,11 @@ class LogLevel
     const INFO = 'info';
     const DEBUG = 'debug';
     
+    /**
+     * Returns all the log levels as an array
+     * 
+     * @return array the log levels
+     */
     public static function all()
     {
         return [
