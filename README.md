@@ -10,7 +10,6 @@ Finally, even the "template" engine that follows the PSR-3 guidelines (i.e. "thi
 ### Εxample
 ```php
 <?php
-require 'vendor/autoload.php';
 
 // Pick the Engine (i.e. template/placeholder matcher, usually the Psr3Engine provided with the package will suffice)
 $engine = new \Dialog\Message\Psr3Engine();
