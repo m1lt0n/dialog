@@ -11,7 +11,8 @@ Finally, even the "template" engine that follows the PSR-3 guidelines (i.e. "thi
 ```php
 <?php
 
-// Pick the Engine (i.e. template/placeholder matcher, usually the Psr3Engine provided with the package will suffice)
+// Pick the Engine (i.e. template/placeholder matcher, usually the Psr3Engine
+// provided with the package will suffice)
 $engine = new \Dialog\Message\Psr3Engine();
 
 // Get a new HandlerBag to add Handlers for the log messages
@@ -27,7 +28,8 @@ $logger = new \Dialog\Log\Logger($engine, $handlerBag);
 // Formatters, well, format the log line (e.g. include date? have the log level etc)
 $formatter = new \Dialog\Formatter\BaseFormatter();
 
-// Output is where the output/result it prepared and stored (if there is a storage mechanism in place, e.g. files/databases)
+// Output is where the output/result it prepared and stored 
+// (if there is a storage mechanism in place, e.g. files/databases)
 $output = new \Dialog\Output\ScreenOutput();
 
 // We create a Handler instance and assign a formatter and output mechanism
