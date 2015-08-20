@@ -26,7 +26,9 @@ $handlerBag = new \Dialog\Log\HandlerBag();
 $logger = new \Dialog\Log\Logger($engine, $handlerBag);
 
 // Formatters, well, format the log line (e.g. include date? have the log level etc)
-$formatter = new \Dialog\Formatter\BaseFormatter();
+$formatter = new \Dialog\Formatter\Formatter(
+     new \Dialog\Formatter\DateTimeBuilder(),
+     new \DialogFormatter\TemplateEngine());
 
 // Output is where the output/result it prepared and stored 
 // (if there is a storage mechanism in place, e.g. files/databases)
@@ -49,4 +51,4 @@ $logger->log(\Dialog\Log\LogLevel::WARNING, 'test');
 $logger->log(\Dialog\Log\LogLevel::INFO, 'test');
 ```
 
-Perhaps the above seems like a significant amount of boilerplate, but nowadays several of the instantiation lines can be done using dependency injection containers and also, the Logger and Handler classes could be subclassed to inject default dependencies or (perhaps even better) factories wrapping the above boilerplate code could be created. After all, with around 7 lines of boilerplate code we managed to uncouple the components of the logging and get huge flexibility.
+Perhaps the above seems like a significant amount of boilerplate, but nowadays several of the instantiation lines can be done using dependency injection containers and also, the Logger and Handler classes could be subclassed to inject default dependencies or (perhaps even better) factories wrapping the above boilerplate code could be created. After all, with around 8 lines of boilerplate code we managed to uncouple the components of the logging and get huge flexibility.
