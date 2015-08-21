@@ -10,7 +10,7 @@ interface OutputInterface
 {
     /**
      * Outputs/processes the log message
-     * 
+     *
      * @param string $message the log message
      * @return null
      */

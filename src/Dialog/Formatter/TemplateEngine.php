@@ -12,17 +12,17 @@ class TemplateEngine implements TemplateEngineInterface
     
     /**
      * The default template delimiters
-     * 
+     *
      * @var array
      */
     protected $delimiters = ['{', '}'];
     
     /**
      * Replaces placeholders with their actual data and returns the result
-     * 
+     *
      * @param array $data optional - the data/placeholder map
      * @return string the result
-     * 
+     *
      * @see \Dialog\Formatter\TemplateEngineInterface::render()
      */
     public function render(array $data = [])
@@ -38,7 +38,7 @@ class TemplateEngine implements TemplateEngineInterface
     
     /**
      * Set the template to be used
-     * 
+     *
      * @param string $template
      * @return null
      *
@@ -51,11 +51,11 @@ class TemplateEngine implements TemplateEngineInterface
     
     /**
      * Set the template delimiters
-     * 
+     *
      * @param string $open opening delimiter
      * @param string $close closing delimiter
      * @return null
-     * 
+     *
      * @see \Dialog\Formatter\TemplateEngineInterface::setDelimiters()
      */
     public function setDelimiters($open, $close)

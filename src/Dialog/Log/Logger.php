@@ -7,7 +7,7 @@ use Dialog\Output\OutputInterface;
 use Dialog\Log\AbstractLogger;
 
 /**
- * A generic implementation of the AbstractLogger. Depends on 
+ * A generic implementation of the AbstractLogger. Depends on
  */
 class Logger extends AbstractLogger
 {
@@ -31,8 +31,8 @@ class Logger extends AbstractLogger
     
     public function __construct(
         EngineInterface $interpolator,
-        HandlerBagInterface $handlerBag)
-    {
+        HandlerBagInterface $handlerBag
+    ) {
         $this->interpolator = $interpolator;
         $this->handlerBag = $handlerBag;
     }
@@ -41,12 +41,12 @@ class Logger extends AbstractLogger
      * The generic log method. First verifies the log level's validity and then
      * interpolates and formats the message and processes it (passes it to all
      * of the registered handlers for the logger)
-     * 
+     *
      * @param string $level the log level
      * @param string $message the message
      * @param array $context the message's context/placeholders
      * @return null
-     * 
+     *
      * @see \Dialog\Log\LoggerInterface::log()
      */
     public function log($level, $message, array $context = [])

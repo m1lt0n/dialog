@@ -115,7 +115,7 @@ trait LoggerTrait
     /**
      * Checks if the log level provided is a valid one according to the PSR-3
      * specification.
-     * 
+     *
      * @param string $level the level to check for validity
      */
     protected function isLevelAllowed($level)

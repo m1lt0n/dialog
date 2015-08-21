@@ -15,11 +15,11 @@ class HandlerBag implements HandlerBagInterface
 
     /**
      * Add a handler to the bag
-     * 
+     *
      * @param string $key the unique key for the handler
      * @param \Dialog\Log\HandlerInterface $handler the handler instance
      * @return null
-     * 
+     *
      * @see \Dialog\Log\HandlerBagInterface::add()
      */
     public function add($key, HandlerInterface $handler)
@@ -29,10 +29,10 @@ class HandlerBag implements HandlerBagInterface
     
     /**
      * Get a handler by key
-     * 
+     *
      * @param string $key the handler key
      * @return mixed the handler instance or null if not found
-     * 
+     *
      * @see \Dialog\Log\HandlerBagInterface::get()
      */
     public function get($key)
@@ -42,10 +42,10 @@ class HandlerBag implements HandlerBagInterface
     
     /**
      * Remove a handler from the bag
-     * 
+     *
      * @param string $key the handler's key
      * @return boolean true if found and removed, false otherwise
-     * 
+     *
      * @see \Dialog\Log\HandlerBagInterface::remove()
      */
     public function remove($key)
@@ -60,21 +60,21 @@ class HandlerBag implements HandlerBagInterface
     
     /**
      * Clear the bag (remove all handlers)
-     * 
+     *
      * @return null
-     * 
+     *
      * @see \Dialog\Log\HandlerBagInterface::clear()
      */
     public function clear()
     {
-        $this->handlers = [];        
+        $this->handlers = [];
     }
 
     /**
      * Returns all handlers
-     * 
+     *
      * @return array an array with all the handlers as elements
-     * 
+     *
      * @see \Dialog\Log\HandlerBagInterface::handlers()
      */
     public function handlers()

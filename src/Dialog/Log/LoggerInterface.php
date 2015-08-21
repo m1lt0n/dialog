@@ -49,7 +49,7 @@ interface LoggerInterface
      * @param array $context optional - the context including placeholders
      * @return null
      */
-    public function critical($message, array $context =[]);
+    public function critical($message, array $context = []);
 
     /**
      * Error: error conditions

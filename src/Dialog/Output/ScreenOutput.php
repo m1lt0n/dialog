@@ -8,7 +8,7 @@ class ScreenOutput implements OutputInterface
 {
     /**
      * Processes and outputs the log message
-     * 
+     *
      * @see \Dialog\Output\OutputInterface::output()
      */
     public function output($message)

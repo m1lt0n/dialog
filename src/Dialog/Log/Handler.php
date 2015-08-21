@@ -11,7 +11,7 @@ class Handler implements HandlerInterface
 {
     /**
      * Holds the minimum threshold for triggering the handling
-     * 
+     *
      * @var unknown
      */
     protected $threshold = LogLevel::INFO;
@@ -36,12 +36,12 @@ class Handler implements HandlerInterface
     
     public function setThreshold($threshold)
     {
-        $this->threshold = $threshold;    
+        $this->threshold = $threshold;
     }
     
     /**
      * Handle the log message
-     * 
+     *
      * @see \Dialog\Log\HandlerInterface::handle()
      */
     public function handle($level, $message)
@@ -59,7 +59,7 @@ class Handler implements HandlerInterface
     
     /**
      * Should a level be handled?
-     * 
+     *
      * @param string $level the log level to check
      * @return boolean whether the level should be handled
      */

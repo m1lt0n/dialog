@@ -11,32 +11,32 @@ class Psr3Engine implements EngineInterface
 
     /**
      * Holds an exception formatter instance
-     * 
+     *
      * @var \Dialog\Message\ExceptionStringFormatterInterface
      */
     protected $exceptionFormatter;
     
     public function __construct(ExceptionStringFormatterInterface $exceptionFormatter)
     {
-        $this->exceptionFormatter = $exceptionFormatter;   
+        $this->exceptionFormatter = $exceptionFormatter;
     }
     
     /**
      * Interpolates a message replacing the context keys with values.
-     * 
+     *
      * Example:
-     * 
+     *
      * $message = 'This is a {animal}';
      * $context = ['animal' => 'Dog'];
-     * 
+     *
      * The outcome of the interpolate method will be:
-     * 
+     *
      * This is a Dog
-     * 
+     *
      * @param string $message the message
      * @param array $context the variables mapping
      * @return string the resulting string
-     * 
+     *
      * @see \Dialog\Message\EngineInterface::interpolate()
      */
     public function interpolate($message, array $context)
@@ -54,8 +54,8 @@ class Psr3Engine implements EngineInterface
             );
         }
         
-        foreach ($context as $key => $value) {            
-            $placeholdersMapping['{'. $key. '}'] = $value;            
+        foreach ($context as $key => $value) {
+            $placeholdersMapping['{'. $key. '}'] = $value;
         }
         
         return strtr($message, $placeholdersMapping);

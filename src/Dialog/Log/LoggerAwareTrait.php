@@ -14,7 +14,7 @@ trait LoggerAwareTrait
     
     /**
      * Set the logger instance
-     * 
+     *
      * @param LoggerInterface $logger the logger
      * @return null
      */

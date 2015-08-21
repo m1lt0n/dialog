@@ -8,7 +8,7 @@ interface HandlerInterface
 {
     /**
      * Handles the log message
-     * 
+     *
      * @param string $level the log level
      * @param string $message the message
      */

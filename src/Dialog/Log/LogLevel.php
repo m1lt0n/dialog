@@ -2,7 +2,7 @@
 namespace Dialog\Log;
 
 /**
- * All the different log levels 
+ * All the different log levels
  */
 class LogLevel
 {
@@ -17,7 +17,7 @@ class LogLevel
     
     /**
      * Return the label of a log level
-     * 
+     *
      * @param integer $level the log level
      * @return string the log level label
      */
@@ -33,7 +33,7 @@ class LogLevel
     
     /**
      * Return the priority of the log level (same as its value)
-     * 
+     *
      * @param integer $level the log level
      * @return integer the log level priority
      */
@@ -48,7 +48,7 @@ class LogLevel
 
     /**
      * Return if a level is a valid log level
-     * 
+     *
      * @param integer $level the level
      * @return boolean whether it is a valid level or no
      */

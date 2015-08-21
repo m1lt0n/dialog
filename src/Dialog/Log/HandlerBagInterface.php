@@ -8,7 +8,7 @@ interface HandlerBagInterface
 {
     /**
      * Adds a HandlerInterface instance in the handlers of the bag
-     * 
+     *
      * @param string $key the unique key of the handler instance
      * @param HandlerInterface $handler the handler
      * @return null
@@ -25,7 +25,7 @@ interface HandlerBagInterface
     
     /**
      * Removes a handler from the bag
-     * 
+     *
      * @param string $key the key of the handler
      * @return null
      */
@@ -33,14 +33,14 @@ interface HandlerBagInterface
     
     /**
      * Clears the bag from all handlers
-     * 
+     *
      * @return null
      */
     public function clear();
     
     /**
      * Gets all handlers
-     * 
+     *
      * @return array an array with HandlerInterface instances as elements
      */
     public function handlers();
