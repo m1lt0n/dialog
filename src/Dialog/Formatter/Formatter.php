@@ -52,6 +52,8 @@ class Formatter implements FormatterInterface
         $date = $this->dateBuilder->buildFromTime();
         $level = strtoupper($level);
         
+        $this->templateEngine->setTemplate('{date} {level} {message}');
+        $this->templateEngine->setDelimiters('{', '}');
         return $this->templateEngine->render(compact('date', 'level', 'message'));
     }
 }
