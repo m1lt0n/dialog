@@ -1,6 +1,8 @@
 # Dialog
 A PSR-3 compliant logger
 
+[![Build Status](https://travis-ci.org/m1lt0n/dialog.svg)](https://travis-ci.org/m1lt0n/dialog)
+
 Dialog is a simple and very extensible PSR-3 compliant logger. It is modular and allows for multiple log handlers per logger instance. This allows for simultaneous logging in files, displaying on screen, writing in a database etc!
 
 Also, its flexible structure Handlers accepting formatters, too, allow formatting the log message lines however you want to.
