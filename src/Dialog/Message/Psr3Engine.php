@@ -8,6 +8,18 @@ class Psr3Engine implements EngineInterface
 {
     // Holds the exception key in the context to avoid hardcoding it
     const EXCEPTION_KEY = 'exception';
+
+    /**
+     * Holds an exception formatter instance
+     * 
+     * @var \Dialog\Message\ExceptionStringFormatterInterface
+     */
+    protected $exceptionFormatter;
+    
+    public function __construct(ExceptionStringFormatterInterface $exceptionFormatter)
+    {
+        $this->exceptionFormatter = $exceptionFormatter;   
+    }
     
     /**
      * Interpolates a message replacing the context keys with values.
@@ -37,7 +49,7 @@ class Psr3Engine implements EngineInterface
         
         if (array_key_exists(static::EXCEPTION_KEY, $context)
             && $context[static::EXCEPTION_KEY] instanceof \Exception) {
-            $context[static::EXCEPTION_KEY] = $this->formattedExceptionString(
+            $context[static::EXCEPTION_KEY] = $this->exceptionFormatter->format(
                 $context[static::EXCEPTION_KEY]
             );
         }
@@ -47,30 +59,5 @@ class Psr3Engine implements EngineInterface
         }
         
         return strtr($message, $placeholdersMapping);
-    }
-    
-    /**
-     * Returns a string representation of an Exception instance.
-     * 
-     * Example:
-     * 
-     * function getexception()
-     * {
-     *     return new \Exception('test message');
-     * }
-     * 
-     * $e = getexception();
-     * 
-     * The output of the formattedExceptionString with $e passed to it would be
-     * 
-     * Message: test message Line: 3 File: blabla.php Trace: --some stack trace--
-     * 
-     * @param \Exception $e the Exception instance
-     * @return string the formatted exception string
-     */
-    protected function formattedExceptionString(\Exception $e)
-    {
-        return "Message: {$e->getMessage()} Line: {$e->getLine()} ".
-               "File: {$e->getFile()} Trace: {$e->getTraceAsString()}";
     }
 }

@@ -13,7 +13,7 @@ Finally, even the "template" engine that follows the PSR-3 guidelines (i.e. "thi
 
 // Pick the Engine (i.e. template/placeholder matcher, usually the Psr3Engine
 // provided with the package will suffice)
-$engine = new \Dialog\Message\Psr3Engine();
+$engine = new \Dialog\Message\Psr3Engine(new \Dialog\Message\ExceptionStringFormatter());
 
 // Get a new HandlerBag to add Handlers for the log messages
 // This allows us to have several handlers and upon triggering log or any
