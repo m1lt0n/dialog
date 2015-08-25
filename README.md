@@ -34,6 +34,7 @@ $formatter = new \Dialog\Formatter\Formatter(
 
 // Output is where the output/result it prepared and stored 
 // (if there is a storage mechanism in place, e.g. files/databases)
+// Currently more than one outputs are supported (Screen, File etc)
 $output = new \Dialog\Output\ScreenOutput();
 
 // We create a Handler instance and assign a formatter and output mechanism
