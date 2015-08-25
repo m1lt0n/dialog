@@ -132,7 +132,6 @@ class FileOutput implements OutputInterface
     protected function closeFile()
     {
         if (is_resource($this->file)) {
-            echo "closing file {$this->file}";
             fclose($this->file);
             $this->file = null;
         }
